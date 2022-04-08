@@ -38,11 +38,12 @@ module.exports = () => {
           break;
       }
     });
+    const picCollection = gender === "female" ? "women" : "men";
     data.users.push({
       id: faker.datatype.uuid(),
       stageName: stageName,
       email: faker.internet.email(firstname, lastName),
-      profileImage: `https://randomuser.me/api/portraits/${gender}/${faker.datatype.number(
+      profileImage: `https://randomuser.me/api/portraits/${picCollection}/${faker.datatype.number(
         { min: 1, max: 96 }
       )}.jpg`,
       bio: faker.lorem.paragraph(),
